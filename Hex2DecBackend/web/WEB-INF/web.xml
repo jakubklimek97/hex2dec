@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>tables</servlet-name>
+        <servlet-class>pl.jklimek.hex2decBackend.controller.Tables</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Settings</servlet-name>
+        <servlet-class>pl.jklimek.hex2decBackend.controller.Settings</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tables</servlet-name>
+        <url-pattern>/tables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Settings</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>dbUrl</param-name>
+        <param-value>jdbc:derby://localhost:1527/hex</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbUser</param-name>
+        <param-value>hex</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbPassword</param-name>
+        <param-value>hex</param-value>
+    </context-param>
+</web-app>
+
